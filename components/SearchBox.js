@@ -3,13 +3,21 @@ import { render } from "react-dom";
 
 import { Button } from "antd";
 
+import Link from "next/link";
+
 export default class SearchBox extends React.Component {
   state = {
-    loading: false
+    loading: false,
+    enteredValue: ""
   };
 
   enterLoading = () => {
     this.setState({ loading: true });
+    this.setState({ enteredValue: "Thanks. Searching now!" });
+  };
+
+  onChange = e => {
+    this.setState({ enteredValue: e.target.value });
   };
 
   render() {
@@ -18,6 +26,8 @@ export default class SearchBox extends React.Component {
         <Input
           size="large"
           placeholder="Enter username"
+          value={this.state.enteredValue || ""}
+          onChange={this.onChange}
           prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
           suffix={
             <Tooltip title="This is the user you'd like more information on.">
@@ -26,14 +36,16 @@ export default class SearchBox extends React.Component {
           }
         />
 
-        <Button
-          type="danger"
-          shape="round"
-          onClick={this.enterLoading()}
-          loading={this.state.loading}
-        >
-          Search
-        </Button>
+        <Link href={"/user/" + this.state.enteredValue}>
+          <Button
+            type="danger"
+            shape="round"
+            onClick={this.enterLoading}
+            loading={this.state.loading}
+          >
+            Search
+          </Button>
+        </Link>
 
         <br />
         <br />
