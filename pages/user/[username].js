@@ -5,31 +5,53 @@ const { Header, Content, Sider, Footer } = Layout;
 
 import { Typography } from "antd";
 
+import fetch from "isomorphic-unfetch";
+
 const { Title } = Typography;
 
-export default class username extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <Content
-          style={{
-            background: "#fff",
-            padding: 256,
-            margin: 0,
-            // minHeight: 280,
-            // padding: "0 50px",
-            marginTop: 24
-          }}
-        >
-          <div>
-            <Title>{this}</Title>
-            <h1>username</h1>
-            <h6>Software Engineer from San Francisco</h6>
-            <p>Joined on September 12th, 2013</p>
-            <p>New York</p>
-          </div>
-        </Content>
-      </Layout>
-    );
-  }
-}
+const Stats = props => {
+  return (
+    <Layout>
+      <Content
+        style={{
+          background: "#fff",
+          padding: 256,
+          margin: 0,
+          // minHeight: 280,
+          // padding: "0 50px",
+          marginTop: 24
+        }}
+      >
+        <div>
+          <Title>{props.username}</Title>
+          <h1>username</h1>
+          <h6>Software Engineer from San Francisco</h6>
+          <p>Joined on September 12th, 2013</p>
+          <p>New York</p>
+        </div>
+      </Content>
+    </Layout>
+  );
+};
+
+Stats.getInitialProps = async function(context) {
+  console.log("YO");
+  // On a post page, retrive post by id and the comments for that post.
+  const { username } = context.query;
+  // const postRes = await fetch(
+  //   `https://jsonplaceholder.typicode.com/posts/${id}`
+  // );
+  // const commentsRes = await fetch(
+  //   `https://jsonplaceholder.typicode.com/comments?postId=${id}`
+  // );
+  // const post = await postRes.json();
+  // const comments = await commentsRes.json();
+
+  // console.log(`Fetched post: ${post.title}`);
+  // console.log(`Fetched comments: ${comments}`);
+
+  // return { post, comments };
+  return { username };
+};
+
+export default Stats;
