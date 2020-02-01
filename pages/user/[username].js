@@ -41,7 +41,6 @@ const Stats = props => {
 };
 
 Stats.getInitialProps = async function(context) {
-  console.log("YO");
   // On a post page, retrive post by id and the comments for that post.
   const { username } = context.query;
   // const postRes = await fetch(
