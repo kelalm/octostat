@@ -1,7 +1,10 @@
+import SearchBox from "../components/SearchBox";
+
 export default function Index() {
   return (
     <div>
-      <p>Welcome to Octostat!</p>
+      <h1>Welcome to Octostat!</h1>
+      <SearchBox />
     </div>
   );
 }
