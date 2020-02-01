@@ -10,6 +10,8 @@ import fetch from "isomorphic-unfetch";
 import MainRow from "../../components/MainRow";
 import TopRepos from "../../components/TopRepos";
 
+var GhPolyglot = require("gh-polyglot");
+
 const { Title } = Typography;
 
 const Stats = props => {
@@ -43,20 +45,27 @@ const Stats = props => {
 Stats.getInitialProps = async function(context) {
   // On a post page, retrive post by id and the comments for that post.
   const { username } = context.query;
-  // const postRes = await fetch(
-  //   `https://jsonplaceholder.typicode.com/posts/${id}`
-  // );
-  // const commentsRes = await fetch(
-  //   `https://jsonplaceholder.typicode.com/comments?postId=${id}`
-  // );
-  // const post = await postRes.json();
-  // const comments = await commentsRes.json();
+  // Stats about git-stats
+  var gitUser = new GhPolyglot(username);
 
-  // console.log(`Fetched post: ${post.title}`);
-  // console.log(`Fetched comments: ${comments}`);
+  // // Repository stats
+  // gitUser.repoStats(function(err, stats) {
+  //   console.log(err || stats);
+  // });
 
-  // return { post, comments };
-  return { username };
+  // // User stats
+  // gitUser.userStats(function(err, stats) {
+  //   console.log(err || stats);
+  // });
+
+  var allRepos;
+
+  gitUser.getAllRepos(function(err, stats) {
+    allRepos = stats;
+    console.log(stats);
+  });
+
+  return { username, allRepos };
 };
 
 export default Stats;
