@@ -7,6 +7,8 @@ import { Typography } from "antd";
 
 import fetch from "isomorphic-unfetch";
 
+import MainRow from "../../components/MainRow";
+
 const { Title } = Typography;
 
 const Stats = props => {
@@ -24,10 +26,12 @@ const Stats = props => {
       >
         <div>
           <Title>{props.username}</Title>
-          <h1>username</h1>
+          <Title>{props.username}</Title>
           <h6>Software Engineer from San Francisco</h6>
           <p>Joined on September 12th, 2013</p>
           <p>New York</p>
+
+          <MainRow />
         </div>
       </Content>
     </Layout>
