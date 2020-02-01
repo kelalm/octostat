@@ -1,7 +1,17 @@
 import { Input, Tooltip, Icon } from "antd";
 import { render } from "react-dom";
 
+import { Button } from "antd";
+
 export default class SearchBox extends React.Component {
+  state = {
+    loading: false
+  };
+
+  enterLoading = () => {
+    this.setState({ loading: true });
+  };
+
   render() {
     return (
       <div>
@@ -15,6 +25,15 @@ export default class SearchBox extends React.Component {
             </Tooltip>
           }
         />
+
+        <Button
+          type="danger"
+          shape="round"
+          onClick={this.enterLoading()}
+          loading={this.state.loading}
+        >
+          Search
+        </Button>
 
         <br />
         <br />
