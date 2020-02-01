@@ -7,10 +7,10 @@ export default class SearchBox extends React.Component {
       <div>
         <Input
           size="large"
-          placeholder="Enter your username"
+          placeholder="Enter username"
           prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
           suffix={
-            <Tooltip title="Extra information">
+            <Tooltip title="This is the user you'd like more information on.">
               <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
             </Tooltip>
           }
@@ -18,8 +18,6 @@ export default class SearchBox extends React.Component {
 
         <br />
         <br />
-
-        <Input prefix="￥" suffix="RMB" />
       </div>
     );
   }
