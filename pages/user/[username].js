@@ -8,6 +8,7 @@ import { Typography } from "antd";
 import fetch from "isomorphic-unfetch";
 
 import MainRow from "../../components/MainRow";
+import TopRepos from "../../components/TopRepos";
 
 const { Title } = Typography;
 
@@ -32,6 +33,7 @@ const Stats = props => {
           <p>New York</p>
 
           <MainRow />
+          <TopRepos />
         </div>
       </Content>
     </Layout>
