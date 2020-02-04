@@ -81,11 +81,11 @@ const Stats = props => {
     //     }
     //   });
 
-    // getUserData();
+    getUserData();
     // getLangData();
     // getRepoData();
 
-    setUserData({ name: "kelvin" });
+    // setUserData({ name: "kelvin" });
     // setLangData(mockLangData);
     // setRepoData(mockRepoData);
   }, []);
