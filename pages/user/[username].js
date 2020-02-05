@@ -5,6 +5,8 @@ import { List, Avatar, Icon } from "antd";
 import { Row, Col } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 
+import { useRouter } from "next/router";
+
 import { Typography } from "antd";
 
 import fetch from "isomorphic-unfetch";
@@ -17,7 +19,8 @@ var GhPolyglot = require("gh-polyglot");
 const { Title } = Typography;
 
 const Stats = props => {
-  const username = "kelalm";
+  const router = useRouter();
+  const username = router.query.username;
   const [userData, setUserData] = useState("");
   const [langData, setLangData] = useState("");
   const [repoData, setRepoData] = useState("");

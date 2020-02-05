@@ -23,8 +23,8 @@ export default function Index() {
         }}
       >
         <div>
-          <h1>Welcome to Octostat!</h1>
-          <h3>Enter the GitHub user's stats you'd like to see below.</h3>
+          <Title>Welcome to Octostat!</Title>
+          <h3>Search for a user.</h3>
           <SearchBox />
         </div>
       </Content>
