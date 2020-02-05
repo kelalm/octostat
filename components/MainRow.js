@@ -5,17 +5,17 @@ const MainRow = ({ userData }) => (
     <Row gutter={16}>
       <Col span={8}>
         <Card title="Total Repositories" bordered={false}>
-          Card content
+          {userData.public_repos}
         </Card>
       </Col>
       <Col span={8}>
         <Card title="Followers" bordered={false}>
-          {userData.name}
+          {userData.followers}
         </Card>
       </Col>
       <Col span={8}>
         <Card title="Following" bordered={false}>
-          Card content
+          {userData.following}
         </Card>
       </Col>
     </Row>

@@ -103,7 +103,13 @@ const Stats = props => {
         }}
       >
         <div>
-          <Title>{username}</Title>
+          <div>
+            <div>
+              <Avatar size={64} icon="user" src={userData.avatar_url} />
+            </div>
+          </div>
+
+          <Title>{userData.name}</Title>
           <Title>{username}</Title>
           <h6>Software Engineer from San Francisco</h6>
           <p>Joined on September 12th, 2013</p>
