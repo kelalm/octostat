@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import { Layout, Menu, Breadcrumb } from "antd";
 import { List, Avatar, Icon } from "antd";
 import { Row, Col } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
-
-import { useRouter } from "next/router";
 
 import { Typography } from "antd";
 
@@ -21,6 +20,9 @@ const { Title } = Typography;
 const Stats = props => {
   const router = useRouter();
   const username = router.query.username;
+
+  console.log("tryies");
+  console.log(username);
   const [userData, setUserData] = useState("");
   const [langData, setLangData] = useState("");
   const [repoData, setRepoData] = useState("");
