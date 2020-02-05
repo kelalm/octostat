@@ -95,11 +95,14 @@ const Stats = props => {
       <Content
         style={{
           background: "#fff",
-          padding: 256,
-          margin: 0,
+          paddingTop: 24,
+          paddingLeft: 256,
+          paddingRight: 256,
+          paddingBottom: 256,
+          margin: 0
           // minHeight: 280,
           // padding: "0 50px",
-          marginTop: 24
+          // marginTop: 24
         }}
       >
         <div>
@@ -110,9 +113,9 @@ const Stats = props => {
           </div>
 
           <Title>{userData.name}</Title>
-          <Title>{username}</Title>
-          <h6>Software Engineer from San Francisco</h6>
-          <p>Joined on September 12th, 2013</p>
+          <Title>@{username}</Title>
+          <h6>{userData.bio}</h6>
+          <p>Joined on {userData.created_at}</p>
           <p>New York</p>
           <MainRow userData={userData} />
           <TopRepos />
