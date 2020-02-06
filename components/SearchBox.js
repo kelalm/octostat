@@ -1,6 +1,8 @@
 import { Input, Tooltip, Icon } from "antd";
 import { render } from "react-dom";
 
+import Router from "next/router";
+
 import { Button } from "antd";
 
 import Link from "next/link";
@@ -12,6 +14,10 @@ export default class SearchBox extends React.Component {
   };
 
   enterLoading = () => {
+    Router.push({
+      pathname: "/user",
+      query: { id: this.state.enteredValue }
+    });
     this.setState({ loading: true });
     this.setState({ enteredValue: "Thanks. Searching now!" });
   };
@@ -36,16 +42,16 @@ export default class SearchBox extends React.Component {
           }
         />
 
-        <Link href={"/user/" + this.state.enteredValue}>
-          <Button
-            type="danger"
-            shape="round"
-            onClick={this.enterLoading}
-            loading={this.state.loading}
-          >
-            Search
-          </Button>
-        </Link>
+        {/* <Link href={"/user/" + this.state.enteredValue}> */}
+        <Button
+          type="danger"
+          shape="round"
+          onClick={this.enterLoading}
+          loading={this.state.loading}
+        >
+          Search
+        </Button>
+        {/* </Link> */}
 
         <br />
         <br />

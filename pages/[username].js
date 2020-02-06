@@ -10,19 +10,14 @@ import { Typography } from "antd";
 
 import fetch from "isomorphic-unfetch";
 
-import MainRow from "../../components/MainRow";
-import TopRepos from "../../components/TopRepos";
+import MainRow from "../components/MainRow";
+import TopRepos from "../components/TopRepos";
 
 var GhPolyglot = require("gh-polyglot");
 
 const { Title } = Typography;
 
 const Stats = props => {
-  const router = useRouter();
-  const username = router.query.username;
-
-  console.log("tryies");
-  console.log(username);
   const [userData, setUserData] = useState("");
   const [langData, setLangData] = useState("");
   const [repoData, setRepoData] = useState("");
@@ -94,6 +89,9 @@ const Stats = props => {
     // setLangData(mockLangData);
     // setRepoData(mockRepoData);
   }, []);
+
+  console.log("tryies");
+  console.log(username);
 
   return (
     <Layout>
