@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
+import PropTypes from "prop-types";
+
 import { Layout, Menu, Breadcrumb } from "antd";
 import { List, Avatar, Icon } from "antd";
 import { Row, Col } from "antd";
@@ -18,6 +20,11 @@ var GhPolyglot = require("gh-polyglot");
 const { Title } = Typography;
 
 const Stats = props => {
+  const username = props.query.id;
+
+  console.log("tryies");
+  console.log(username);
+
   const [userData, setUserData] = useState("");
   const [langData, setLangData] = useState("");
   const [repoData, setRepoData] = useState("");
@@ -90,9 +97,6 @@ const Stats = props => {
     // setRepoData(mockRepoData);
   }, []);
 
-  console.log("tryies");
-  console.log(username);
-
   return (
     <Layout>
       <Content
@@ -129,3 +133,7 @@ const Stats = props => {
 };
 
 export default Stats;
+
+Stats.propTypes = {
+  query: PropTypes.object
+};
