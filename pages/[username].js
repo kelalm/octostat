@@ -120,10 +120,17 @@ const Stats = props => {
           </div>
 
           <Title>{userData.name}</Title>
-          <Title>@{username}</Title>
-          <h6>{userData.bio}</h6>
-          <p>Joined on {userData.created_at}</p>
-          <p>New York</p>
+          <Title level={3}>@{username}</Title>
+          <Title level={4}>{userData.bio}</Title>
+          <p>
+            Joined{" "}
+            {new Date(userData.created_at).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric"
+            })}
+          </p>
+          <p>{userData.location}</p>
           <MainRow userData={userData} />
           <TopRepos />
         </div>
