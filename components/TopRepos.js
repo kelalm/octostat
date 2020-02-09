@@ -48,13 +48,15 @@ const TopRepos = ({ repoData }) => {
 
   useEffect(() => getTopRepos(sortType), [sortType]);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const triggerNotification = () => {
+    console.log("ok");
+  };
 
   const changeRepoSort = sortType => {
     console.log("Setting sort type");
     console.log(sortType.target.value);
     setSortType(sortType.target.value);
-    // toggleDropdown();
+    triggerNotification();
   };
 
   const sortTypes = ["stars", "forks", "size"];

@@ -118,9 +118,13 @@ const Stats = props => {
           </div>
 
           <Title>{userData.name}</Title>
-          <Title level={3}>@{username}</Title>
-          <Title level={4}>{userData.bio}</Title>
-          <p>
+          <Title level={3} style={{ marginTop: -24 }}>
+            @{username}
+          </Title>
+          <Title level={4} style={{ marginTop: 0 }}>
+            {userData.bio}
+          </Title>
+          <p style={{ marginTop: -10 }}>
             Joined{" "}
             {new Date(userData.created_at).toLocaleDateString("en-US", {
               month: "long",
@@ -128,7 +132,7 @@ const Stats = props => {
               year: "numeric"
             })}
           </p>
-          <p>{userData.location}</p>
+          <p style={{ marginTop: -10 }}>{userData.location}</p>
           {userData && <MainRow userData={userData} />}
           {repoData && <TopRepos repoData={repoData} />}
         </div>
