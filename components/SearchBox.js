@@ -48,6 +48,7 @@ export default class SearchBox extends React.Component {
           shape="round"
           onClick={this.enterLoading}
           loading={this.state.loading}
+          style={{ marginTop: "2rem" }}
         >
           Search
         </Button>

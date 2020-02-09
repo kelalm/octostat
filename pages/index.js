@@ -22,11 +22,11 @@ export default function Index() {
           marginTop: 24
         }}
       >
-        <Row>
+        <Row style={{ textAlign: "center" }}>
           <Col span={4}></Col>
           <Col span={16}>
             <Title>Welcome to Octostat</Title>
-            <Title level={4}>Search for a GitHub user.</Title>
+            <Title level={4}>Search for a GitHub user</Title>
             <SearchBox />
           </Col>
           <Col span={4}></Col>
