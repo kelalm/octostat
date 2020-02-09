@@ -22,11 +22,15 @@ export default function Index() {
           marginTop: 24
         }}
       >
-        <div>
-          <Title>Welcome to Octostat!</Title>
-          <h3>Search for a user.</h3>
-          <SearchBox />
-        </div>
+        <Row>
+          <Col span={4}></Col>
+          <Col span={16}>
+            <Title>Welcome to Octostat</Title>
+            <Title level={4}>Search for a GitHub user.</Title>
+            <SearchBox />
+          </Col>
+          <Col span={4}></Col>
+        </Row>
       </Content>
     </Layout>
   );
