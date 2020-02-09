@@ -9,19 +9,18 @@ const gridStyle = {
 };
 
 const TopRepos = ({ repoData }) => {
+  console.log(repoData);
   const [topRepos, setTopRepos] = useState([]);
   const [sortType, setSortType] = useState("stars");
-  const [dropdownOpen, setDropDownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const getTopRepos = type => {
     const LIMIT = 8;
-
     const map = {
       stars: "stargazers_count",
       forks: "forks_count",
       size: "size"
     };
-
     const sortProperty = map[type];
     const sorted = repoData
       .filter(repo => !repo.fork)
@@ -50,14 +49,9 @@ const TopRepos = ({ repoData }) => {
 
   return (
     <Card title="Top Repositories" style={{ marginTop: 100 }}>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid style={gridStyle}>Content</Card.Grid>
+      {topRepos.map(repo => (
+        <Card.Grid style={gridStyle}>repo.title</Card.Grid>
+      ))}
     </Card>
   );
 };
