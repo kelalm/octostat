@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Card } from "antd";
 
 const gridStyle = {
-  width: "25%",
+  width: "50%",
   textAlign: "center"
 };
 
