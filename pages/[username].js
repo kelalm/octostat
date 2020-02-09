@@ -73,7 +73,7 @@ const Stats = props => {
       })
       .then(json => setRepoData(json))
       .catch(error => {
-        setError({ active: true, type: 200 });
+        setError({ active: true, type: 400 });
         console.error("Error:", error);
       });
   };
@@ -91,6 +91,8 @@ const Stats = props => {
     getUserData();
     // getLangData();
     getRepoData();
+    console.log("Sazon");
+    console.log(repoData);
   }, []);
 
   return (
@@ -127,8 +129,8 @@ const Stats = props => {
             })}
           </p>
           <p>{userData.location}</p>
-          <MainRow userData={userData} />
-          <TopRepos repoData={repoData} />
+          {userData && <MainRow userData={userData} />}
+          {repoData && <TopRepos repoData={repoData} />}
         </div>
       </Content>
     </Layout>
