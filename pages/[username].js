@@ -13,6 +13,7 @@ import { Typography } from "antd";
 import fetch from "isomorphic-unfetch";
 
 import MainRow from "../components/MainRow";
+import MainCharts from "../components/MainCharts";
 import TopRepos from "../components/TopRepos";
 
 var GhPolyglot = require("gh-polyglot");
@@ -134,6 +135,7 @@ const Stats = props => {
           </p>
           <p style={{ marginTop: -10 }}>{userData.location}</p>
           {userData && <MainRow userData={userData} />}
+          <MainCharts />
           {repoData && <TopRepos repoData={repoData} />}
         </div>
       </Content>
