@@ -50,7 +50,9 @@ const TopRepos = ({ repoData }) => {
   return (
     <Card title="Top Repositories" style={{ marginTop: 100 }}>
       {topRepos.map(repo => (
-        <Card.Grid style={gridStyle}>repo.title</Card.Grid>
+        <Card.Grid key={repo.id} style={gridStyle}>
+          {repo.name}
+        </Card.Grid>
       ))}
     </Card>
   );
