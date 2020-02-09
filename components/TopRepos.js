@@ -5,13 +5,16 @@ const gridStyle = {
   textAlign: "center"
 };
 
-const TopRepos = props => {
+const TopRepos = ({ repoData }) => {
+  const [topRepos, setTopRepos] = useState([]);
+  const [sortType, setSortType] = useState("stars");
+  const [dropdownOpen, setDropDownOpen] = useState(false);
+
   return (
     <Card title="Top Repositories" style={{ marginTop: 100 }}>
       <Card.Grid style={gridStyle}>Content</Card.Grid>
-      <Card.Grid hoverable={false} style={gridStyle}>
-        Content
-      </Card.Grid>
+      <Card.Grid style={gridStyle}>Content</Card.Grid>
+      <Card.Grid style={gridStyle}>Content</Card.Grid>
       <Card.Grid style={gridStyle}>Content</Card.Grid>
       <Card.Grid style={gridStyle}>Content</Card.Grid>
       <Card.Grid style={gridStyle}>Content</Card.Grid>
