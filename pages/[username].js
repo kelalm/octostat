@@ -90,11 +90,7 @@ const Stats = props => {
 
     getUserData();
     // getLangData();
-    // getRepoData();
-
-    // setUserData({ name: "kelvin" });
-    // setLangData(mockLangData);
-    // setRepoData(mockRepoData);
+    getRepoData();
   }, []);
 
   return (
@@ -132,7 +128,7 @@ const Stats = props => {
           </p>
           <p>{userData.location}</p>
           <MainRow userData={userData} />
-          <TopRepos />
+          <TopRepos repoData={repoData} />
         </div>
       </Content>
     </Layout>

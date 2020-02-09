@@ -19,7 +19,7 @@ export default class SearchBox extends React.Component {
       query: { id: this.state.enteredValue }
     });
     this.setState({ loading: true });
-    this.setState({ enteredValue: "Thanks. Searching now!" });
+    this.setState({ enteredValue: "Thank you for your entry. Searching now!" });
   };
 
   onChange = e => {
