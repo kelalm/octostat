@@ -14,7 +14,6 @@ export default function Index() {
     <Layout>
       <Content
         style={{
-          background: "#fff",
           padding: 256,
           margin: 0,
           // minHeight: 280,

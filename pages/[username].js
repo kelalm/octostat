@@ -18,7 +18,7 @@ import TopRepos from "../components/TopRepos";
 
 var GhPolyglot = require("gh-polyglot");
 
-const { Title } = Typography;
+const { Title, Text, Paragraph } = Typography;
 
 const Stats = props => {
   const username = props.query.id;
@@ -100,7 +100,8 @@ const Stats = props => {
     <Layout>
       <Content
         style={{
-          background: "#fff",
+          background: "#1c2e4a",
+          height: 500,
           paddingTop: 24,
           paddingLeft: 256,
           paddingRight: 256,
@@ -114,12 +115,12 @@ const Stats = props => {
         <div>
           <div>
             <div>
-              <Avatar size={64} icon="user" src={userData.avatar_url} />
+              <Avatar size={128} icon="user" src={userData.avatar_url} />
             </div>
           </div>
 
-          <Title>{userData.name}</Title>
-          <Title level={3} style={{ marginTop: -24 }}>
+          <Title underline={true}>{userData.name}</Title>
+          <Title type={"secondary"} level={3} style={{ marginTop: -24 }}>
             @{username}
           </Title>
           <Title level={4} style={{ marginTop: 0 }}>
