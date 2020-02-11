@@ -7,6 +7,9 @@ const { Option } = Select;
 
 import { Card } from "antd";
 
+import { Typography } from "antd";
+const { Title, Text, Paragraph } = Typography;
+
 const gridStyle = {
   width: "50%",
   textAlign: "center"
@@ -75,7 +78,12 @@ const TopRepos = ({ repoData }) => {
       <Card title="Top Repositories" style={{ marginTop: 10 }}>
         {topRepos.map(repo => (
           <Card.Grid key={repo.id} style={gridStyle}>
-            {repo.name}
+            <Title level={4}>{repo.name}</Title>
+            <Paragraph>
+              {repo.description != null
+                ? repo.description
+                : "No description available for this repo."}
+            </Paragraph>
           </Card.Grid>
         ))}
       </Card>

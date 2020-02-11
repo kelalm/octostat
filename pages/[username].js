@@ -9,6 +9,7 @@ import { Row, Col } from "antd";
 const { Header, Content, Sider, Footer } = Layout;
 
 import { Typography } from "antd";
+const { Title, Text, Paragraph } = Typography;
 
 import fetch from "isomorphic-unfetch";
 
@@ -17,8 +18,6 @@ import MainCharts from "../components/MainCharts";
 import TopRepos from "../components/TopRepos";
 
 var GhPolyglot = require("gh-polyglot");
-
-const { Title, Text, Paragraph } = Typography;
 
 const Stats = props => {
   const username = props.query.id;
@@ -125,7 +124,7 @@ const Stats = props => {
           <Title level={3} style={{ marginTop: -24, color: "#6e727d" }}>
             @{username}
           </Title>
-          <Title level={4} style={{ marginTop: 0, color: "#fff" }}>
+          <Title level={4} style={{ marginTop: -16, color: "#fff" }}>
             {userData.bio}
           </Title>
           <Paragraph style={{ marginTop: -10, color: "#fff" }}>
