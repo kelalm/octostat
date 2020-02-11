@@ -119,22 +119,25 @@ const Stats = props => {
             </div>
           </div>
 
-          <Title underline={true}>{userData.name}</Title>
-          <Title type={"secondary"} level={3} style={{ marginTop: -24 }}>
+          <Title style={{ color: "#b9dfef" }} underline={true}>
+            {userData.name}
+          </Title>
+          <Title level={3} style={{ marginTop: -24, color: "#6e727d" }}>
             @{username}
           </Title>
-          <Title level={4} style={{ marginTop: 0 }}>
+          <Title level={4} style={{ marginTop: 0, color: "#fff" }}>
             {userData.bio}
           </Title>
-          <p style={{ marginTop: -10 }}>
-            Joined{" "}
+          <Paragraph style={{ marginTop: -10, color: "#fff" }}>
+            <Icon type="environment-o" /> {userData.location}
+            <Icon type="calendar" style={{ marginLeft: 30 }} /> Joined{" "}
             {new Date(userData.created_at).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
               year: "numeric"
             })}
-          </p>
-          <p style={{ marginTop: -10 }}>{userData.location}</p>
+          </Paragraph>
+
           {userData && <MainRow userData={userData} />}
           <MainCharts />
           {repoData && <TopRepos repoData={repoData} />}
