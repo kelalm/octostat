@@ -122,7 +122,7 @@ const Stats = props => {
             {userData.name}
           </Title>
           <Title level={3} style={{ marginTop: -24, color: "#6e727d" }}>
-            @{username}
+            <a href={"https://www.github.com/" + username}>@{username}</a>
           </Title>
           <Title level={4} style={{ marginTop: -16, color: "#fff" }}>
             {userData.bio}
