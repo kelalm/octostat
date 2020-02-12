@@ -84,6 +84,16 @@ const TopRepos = ({ repoData }) => {
                 ? repo.description
                 : "No description available for this repo."}
             </Paragraph>
+            <Paragraph>
+              {repo.language +
+                " " +
+                repo.stargazers_count +
+                " " +
+                repo.forks_count +
+                " Forks " +
+                repo.size +
+                " KB"}
+            </Paragraph>
           </Card.Grid>
         ))}
       </Card>

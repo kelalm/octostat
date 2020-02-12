@@ -89,7 +89,7 @@ const Stats = props => {
     //   });
 
     getUserData();
-    // getLangData();
+    getLangData();
     getRepoData();
     console.log("Sazon");
     console.log(repoData);
@@ -138,7 +138,9 @@ const Stats = props => {
           </Paragraph>
 
           {userData && <MainRow userData={userData} />}
-          <MainCharts />
+          {langData && repoData && (
+            <MainCharts langData={langData} repoData={repoData} />
+          )}
           {repoData && <TopRepos repoData={repoData} />}
         </div>
       </Content>
