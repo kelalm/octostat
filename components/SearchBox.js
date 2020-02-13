@@ -5,6 +5,8 @@ import Router from "next/router";
 
 import { Button } from "antd";
 
+const { Search } = Input;
+
 import Link from "next/link";
 
 export default class SearchBox extends React.Component {
