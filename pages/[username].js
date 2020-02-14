@@ -126,7 +126,7 @@ const Stats = props => {
               style={{ color: "inherit" }}
               href={"https://www.github.com/" + username}
             >
-              @{username}
+              @{userData.login}
             </a>
           </Title>
           <Title level={4} style={{ marginTop: -16, color: "#fff" }}>
