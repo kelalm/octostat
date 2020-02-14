@@ -71,6 +71,7 @@ const TopRepos = ({ repoData }) => {
         onChange={changeRepoSort}
         style={selectorStyle}
       >
+        <Title level={4}>Top Repositories by </Title>
         <Radio.Button value="stars">Stars</Radio.Button>
         <Radio.Button value="forks">Forks</Radio.Button>
         <Radio.Button value="size">Size</Radio.Button>
@@ -86,11 +87,11 @@ const TopRepos = ({ repoData }) => {
             </Paragraph>
             <Paragraph>
               {repo.language +
-                " " +
+                " - " +
                 repo.stargazers_count +
-                " " +
+                " Stars - " +
                 repo.forks_count +
-                " Forks " +
+                " Forks - " +
                 repo.size +
                 " KB"}
             </Paragraph>
