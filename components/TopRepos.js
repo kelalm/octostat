@@ -78,24 +78,26 @@ const TopRepos = ({ repoData }) => {
       </Radio.Group>
       <Card title="Top Repositories" style={{ marginTop: 10 }}>
         {topRepos.map(repo => (
-          <Card.Grid key={repo.id} style={gridStyle}>
-            <Title level={4}>{repo.name}</Title>
-            <Paragraph>
-              {repo.description != null
-                ? repo.description
-                : "No description available for this repo."}
-            </Paragraph>
-            <Paragraph>
-              {repo.language +
-                " - " +
-                repo.stargazers_count +
-                " Stars - " +
-                repo.forks_count +
-                " Forks - " +
-                repo.size +
-                " KB"}
-            </Paragraph>
-          </Card.Grid>
+          <a href={repo.html_url}>
+            <Card.Grid key={repo.id} style={gridStyle}>
+              <Title level={4}>{repo.name}</Title>
+              <Paragraph>
+                {repo.description != null
+                  ? repo.description
+                  : "No description available for this repo."}
+              </Paragraph>
+              <Paragraph>
+                {repo.language +
+                  " - " +
+                  repo.stargazers_count +
+                  " Stars - " +
+                  repo.forks_count +
+                  " Forks - " +
+                  repo.size +
+                  " KB"}
+              </Paragraph>
+            </Card.Grid>
+          </a>
         ))}
       </Card>
     </div>
