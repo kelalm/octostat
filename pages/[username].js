@@ -121,8 +121,13 @@ const Stats = props => {
           <Title style={{ color: "#b9dfef" }} underline={true}>
             {userData.name}
           </Title>
-          <Title level={3} style={{ marginTop: -24, color: "#6e727d" }}>
-            <a href={"https://www.github.com/" + username}>@{username}</a>
+          <Title level={3} style={{ marginTop: -24, color: "#bfbfbf" }}>
+            <a
+              style={{ color: "inherit" }}
+              href={"https://www.github.com/" + username}
+            >
+              @{username}
+            </a>
           </Title>
           <Title level={4} style={{ marginTop: -16, color: "#fff" }}>
             {userData.bio}
