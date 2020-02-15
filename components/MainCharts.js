@@ -71,19 +71,18 @@ const MainRow = ({ userData }) => (
           <div>
             <h2>Line Example</h2>
             <Line data={data2} />
-          </div>{" "}
+          </div>
         </Card>
       </Col>
       <Col span={8}>
         <Card title="Most Starred Repositories" bordered={false}>
           <div>
-            <h2>Bar Example (custom size)</h2>
             <Bar
               data={data3}
               width={100}
               height={50}
               options={{
-                maintainAspectRatio: false
+                maintainAspectRatio: true
               }}
             />
           </div>
