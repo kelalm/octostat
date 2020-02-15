@@ -17,7 +17,7 @@ import MainRow from "../components/MainRow";
 import MainCharts from "../components/MainCharts";
 import TopRepos from "../components/TopRepos";
 
-var GhPolyglot = require("gh-polyglot");
+import GhPolyglot from "gh-polyglot";
 
 const Stats = props => {
   const username = props.query.id;
@@ -26,7 +26,7 @@ const Stats = props => {
   console.log(username);
 
   const [userData, setUserData] = useState("");
-  const [langData, setLangData] = useState("");
+  const [langData, setLangData] = useState([]);
   const [repoData, setRepoData] = useState("");
   const [error, setError] = useState({ active: false, type: 200 });
   const [rateLimit, setRateLimit] = useState(null);
@@ -91,8 +91,6 @@ const Stats = props => {
     getUserData();
     getLangData();
     getRepoData();
-    console.log("Sazon");
-    console.log(repoData);
   }, []);
 
   return (
@@ -143,9 +141,7 @@ const Stats = props => {
           </Paragraph>
 
           {userData && <MainRow userData={userData} />}
-          {langData && repoData && (
-            <MainCharts langData={langData} repoData={repoData} />
-          )}
+          {langData && <MainCharts langData={langData} />}
           {repoData && <TopRepos repoData={repoData} />}
         </div>
       </Content>
