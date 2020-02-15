@@ -57,7 +57,7 @@ const data3 = {
 };
 
 const MainRow = ({ userData }) => (
-  <div style={{ background: "#ECECEC", padding: "30px" }}>
+  <div style={{ background: "#FFFFFF", padding: "30px" }}>
     <Row gutter={16}>
       <Col span={8}>
         <Card title="Top Languages" bordered={false}>

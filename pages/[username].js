@@ -99,7 +99,7 @@ const Stats = props => {
     <Layout>
       <Content
         style={{
-          background: "#1c2e4a",
+          background: "#263238",
           height: 500,
           paddingTop: 24,
           paddingLeft: 256,
@@ -118,10 +118,10 @@ const Stats = props => {
             </div>
           </div>
 
-          <Title style={{ color: "#b9dfef" }} underline={true}>
+          <Title style={{ color: "#cfd8dc" }} underline={true}>
             {userData.name}
           </Title>
-          <Title level={3} style={{ marginTop: -24, color: "#bfbfbf" }}>
+          <Title level={3} style={{ marginTop: -16, color: "#607d8b" }}>
             <a
               style={{ color: "inherit" }}
               href={"https://www.github.com/" + username}
@@ -129,10 +129,10 @@ const Stats = props => {
               @{userData.login}
             </a>
           </Title>
-          <Title level={4} style={{ marginTop: -16, color: "#fff" }}>
+          <Title level={4} style={{ marginTop: -8, color: "#fff" }}>
             {userData.bio}
           </Title>
-          <Paragraph style={{ marginTop: -10, color: "#fff" }}>
+          <Paragraph style={{ marginTop: -8, color: "#fff" }}>
             <Icon type="environment-o" /> {userData.location}
             <Icon type="calendar" style={{ marginLeft: 30 }} /> Joined{" "}
             {new Date(userData.created_at).toLocaleDateString("en-US", {
