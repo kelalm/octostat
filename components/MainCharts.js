@@ -48,32 +48,10 @@ const data3 = {
 
 const MainCharts = ({ langData }) => (
   <div style={{ background: "#FFFFFF", padding: "30px" }}>
-    <Row gutter={16}>
-      <Col span={8}>
+    <Row gutter={8}>
+      <Col span={24}>
         <Card title="Top Languages" bordered={false}>
           <DoughnutChart langData={langData}></DoughnutChart>
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="GitHub Contributions" bordered={false}>
-          <div>
-            <h2>Line Example</h2>
-            <Line data={data2} />
-          </div>
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Most Starred Repositories" bordered={false}>
-          <div>
-            <Bar
-              data={data3}
-              width={100}
-              height={50}
-              options={{
-                maintainAspectRatio: true
-              }}
-            />
-          </div>
         </Card>
       </Col>
     </Row>

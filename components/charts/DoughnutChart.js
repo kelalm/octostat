@@ -11,12 +11,25 @@ const data = {
   ]
 };
 
-const DoughnutChart = ({ langData }) => (
-  <div>
-    {console.log(langData)}
+const DoughnutChart = ({ langData }) => {
+  const data = {
+    labels: langData.map(a => a.label),
 
-    <Doughnut data={data} />
-  </div>
-);
+    datasets: [
+      {
+        data: langData.map(a => a.value),
+        backgroundColor: langData.map(a => a.color),
+        hoverBackgroundColor: langData.map(a => a.color)
+      }
+    ]
+  };
+
+  return (
+    <div>
+      {console.log(langData)}
+      <Doughnut data={data} />
+    </div>
+  );
+};
 
 export default DoughnutChart;
