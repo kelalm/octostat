@@ -110,7 +110,7 @@ const Stats = props => {
         }}
       >
         <Row>
-          <Col xs={20} sm={20} md={20} lg={20} xl={10}>
+          <Col xs={20} sm={24} md={24} lg={20} xl={10}>
             <div>
               <div>
                 <Avatar size={128} icon="user" src={userData.avatar_url} />
@@ -129,8 +129,8 @@ const Stats = props => {
               </a>
             </Title>
           </Col>
-          <Col xs={2} sm={2} md={2} lg={2} xl={7}></Col>
-          <Col xs={2} sm={2} md={2} lg={2} xl={7}></Col>
+          <Col xs={2} sm={2} md={0} lg={2} xl={7}></Col>
+          <Col xs={2} sm={2} md={0} lg={2} xl={7}></Col>
         </Row>
         <Row>
           <Title level={4} style={{ marginTop: 0, color: "#fff" }}>
@@ -148,9 +148,16 @@ const Stats = props => {
           })}
         </Paragraph>
 
-        {userData && <MainRow userData={userData} />}
-        {langData && <MainCharts langData={langData} />}
-        {repoData && <TopRepos repoData={repoData} />}
+        <Row>
+          <Col xs={0} sm={0} md={0} lg={0} xl={0}></Col>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            {" "}
+            {userData && <MainRow userData={userData} />}
+          </Col>
+          <Col xs={0} sm={0} md={0} lg={0} xl={0}></Col>
+        </Row>
+        <Row>{langData && <MainCharts langData={langData} />}</Row>
+        <Row>{repoData && <TopRepos repoData={repoData} />}</Row>
       </Content>
     </Layout>
   );
