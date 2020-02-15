@@ -109,41 +109,48 @@ const Stats = props => {
           // marginTop: 24
         }}
       >
-        <div>
-          <div>
+        <Row>
+          <Col xs={20} sm={20} md={20} lg={20} xl={10}>
             <div>
-              <Avatar size={128} icon="user" src={userData.avatar_url} />
+              <div>
+                <Avatar size={128} icon="user" src={userData.avatar_url} />
+              </div>
             </div>
-          </div>
 
-          <Title style={{ color: "#cfd8dc" }} underline={true}>
-            {userData.name}
-          </Title>
-          <Title level={3} style={{ marginTop: -16, color: "#607d8b" }}>
-            <a
-              style={{ color: "inherit" }}
-              href={"https://www.github.com/" + username}
-            >
-              @{userData.login}
-            </a>
-          </Title>
-          <Title level={4} style={{ marginTop: -8, color: "#fff" }}>
+            <Title style={{ color: "#cfd8dc" }} underline={true}>
+              {userData.name}
+            </Title>
+            <Title level={3} style={{ marginTop: -16, color: "#607d8b" }}>
+              <a
+                style={{ color: "inherit" }}
+                href={"https://www.github.com/" + username}
+              >
+                @{userData.login}
+              </a>
+            </Title>
+          </Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={7}></Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={7}></Col>
+        </Row>
+        <Row>
+          <Title level={4} style={{ marginTop: 0, color: "#fff" }}>
             {userData.bio}
           </Title>
-          <Paragraph style={{ marginTop: -8, color: "#fff" }}>
-            <Icon type="environment-o" /> {userData.location}
-            <Icon type="calendar" style={{ marginLeft: 30 }} /> Joined{" "}
-            {new Date(userData.created_at).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric"
-            })}
-          </Paragraph>
+        </Row>
 
-          {userData && <MainRow userData={userData} />}
-          {langData && <MainCharts langData={langData} />}
-          {repoData && <TopRepos repoData={repoData} />}
-        </div>
+        <Paragraph style={{ marginTop: -8, color: "#fff" }}>
+          <Icon type="environment-o" /> {userData.location}
+          <Icon type="calendar" style={{ marginLeft: 30 }} /> Joined{" "}
+          {new Date(userData.created_at).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          })}
+        </Paragraph>
+
+        {userData && <MainRow userData={userData} />}
+        {langData && <MainCharts langData={langData} />}
+        {repoData && <TopRepos repoData={repoData} />}
       </Content>
     </Layout>
   );
