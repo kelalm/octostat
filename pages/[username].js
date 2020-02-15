@@ -98,7 +98,7 @@ const Stats = props => {
       <Content
         style={{
           background: "#263238",
-          height: 500,
+          height: 400,
           paddingTop: 24,
           paddingLeft: 256,
           paddingRight: 256,
