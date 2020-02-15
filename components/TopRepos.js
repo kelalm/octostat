@@ -71,7 +71,7 @@ const TopRepos = ({ repoData }) => {
         onChange={changeRepoSort}
         style={selectorStyle}
       >
-        <Title level={4}>Top Repositories by </Title>
+        <Title level={4}>Sort repositories by </Title>
         <Radio.Button value="stars">Stars</Radio.Button>
         <Radio.Button value="forks">Forks</Radio.Button>
         <Radio.Button value="size">Size</Radio.Button>
