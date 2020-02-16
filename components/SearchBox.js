@@ -45,7 +45,6 @@ export default class SearchBox extends React.Component {
             }
           />
         </form>
-
         {/* <Link href={"/user/" + this.state.enteredValue}> */}
         <Button
           type="danger"
