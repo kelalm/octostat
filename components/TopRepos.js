@@ -81,12 +81,12 @@ const TopRepos = ({ repoData }) => {
           <a href={repo.html_url}>
             <Card.Grid key={repo.id} style={gridStyle}>
               <Title level={4}>{repo.name}</Title>
-              <Paragraph>
+              <Paragraph ellipsis="true">
                 {repo.description != null
                   ? repo.description
                   : "No description available for this repo."}
               </Paragraph>
-              <Paragraph>
+              <Paragraph ellipsis="true">
                 {repo.language +
                   " - " +
                   repo.stargazers_count +
