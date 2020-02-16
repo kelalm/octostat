@@ -31,18 +31,20 @@ export default class SearchBox extends React.Component {
   render() {
     return (
       <div>
-        <Input
-          size="large"
-          placeholder="Enter username"
-          value={this.state.enteredValue || ""}
-          onChange={this.onChange}
-          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-          suffix={
-            <Tooltip title="This is the user you'd like more information on.">
-              <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
-            </Tooltip>
-          }
-        />
+        <form onSubmit={this.enterLoading}>
+          <Input
+            size="large"
+            placeholder="Enter username"
+            value={this.state.enteredValue || ""}
+            onChange={this.onChange}
+            prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+            suffix={
+              <Tooltip title="This is the user you'd like more information on.">
+                <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+              </Tooltip>
+            }
+          />
+        </form>
 
         {/* <Link href={"/user/" + this.state.enteredValue}> */}
         <Button
