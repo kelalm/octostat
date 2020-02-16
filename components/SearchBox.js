@@ -44,17 +44,18 @@ export default class SearchBox extends React.Component {
               </Tooltip>
             }
           />
+          <Button
+            type="danger"
+            shape="round"
+            onClick={this.enterLoading}
+            loading={this.state.loading}
+            style={{ marginTop: "2rem" }}
+          >
+            Search
+          </Button>
         </form>
         {/* <Link href={"/user/" + this.state.enteredValue}> */}
-        <Button
-          type="danger"
-          shape="round"
-          onClick={this.enterLoading}
-          loading={this.state.loading}
-          style={{ marginTop: "2rem" }}
-        >
-          Search
-        </Button>
+
         {/* </Link> */}
 
         <br />
