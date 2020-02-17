@@ -5,13 +5,13 @@ import { Select, Radio } from "antd";
 
 const { Option } = Select;
 
-import { Card } from "antd";
+import { Card, Col, Row } from "antd";
 
 import { Typography } from "antd";
 const { Title, Text, Paragraph } = Typography;
 
 const gridStyle = {
-  width: "50%",
+  width: "100%",
   textAlign: "center"
 };
 
@@ -77,28 +77,35 @@ const TopRepos = ({ repoData }) => {
         <Radio.Button value="size">Size</Radio.Button>
       </Radio.Group>
       <Card title="Top Repositories" style={{ marginTop: 10 }}>
-        {topRepos.map(repo => (
-          <a href={repo.html_url}>
-            <Card.Grid key={repo.id} style={gridStyle}>
-              <Title level={4}>{repo.name}</Title>
-              <Paragraph ellipsis="true">
-                {repo.description != null
-                  ? repo.description
-                  : "No description available for this repo."}
-              </Paragraph>
-              <Paragraph ellipsis="true">
-                {repo.language +
-                  " - " +
-                  repo.stargazers_count +
-                  " Stars - " +
-                  repo.forks_count +
-                  " Forks - " +
-                  repo.size +
-                  " KB"}
-              </Paragraph>
-            </Card.Grid>
-          </a>
-        ))}
+        <Row>
+          <Col xs={0} sm={0} md={0} lg={0} xl={0}></Col>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+            {topRepos.map(repo => (
+              <a href={repo.html_url}>
+                <Card.Grid key={repo.id} style={gridStyle}>
+                  <Title level={4}>{repo.name}</Title>
+                  <Paragraph ellipsis="true">
+                    {repo.description != null
+                      ? repo.description
+                      : "No description available for this repo."}
+                  </Paragraph>
+                  <Paragraph ellipsis="true">
+                    {repo.language +
+                      " - " +
+                      repo.stargazers_count +
+                      " Stars - " +
+                      repo.forks_count +
+                      " Forks - " +
+                      repo.size +
+                      " KB"}
+                  </Paragraph>
+                </Card.Grid>
+              </a>
+            ))}
+          </Col>
+
+          <Col xs={0} sm={0} md={0} lg={0} xl={0}></Col>
+        </Row>
       </Card>
     </div>
   );
