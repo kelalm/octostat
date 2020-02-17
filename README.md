@@ -2,7 +2,7 @@
 
 Visualize your GitHub statistics through this application.
 
-![]()
+![](images/Octostat.png)
 
 Application developed with:
 
