@@ -7,7 +7,7 @@ Visualize your GitHub statistics through this application.
 Application developed with:
 
 - [Next.js](https://nextjs.org/)
-- [Next.js](https://reactjs.org/)
+- [React](https://reactjs.org/)
 - [GitHub Polyglot](https://github.com/IonicaBizau/node-gh-polyglot)
 - [Chart.js](https://www.chartjs.org/)
 
