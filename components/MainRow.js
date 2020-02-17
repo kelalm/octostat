@@ -6,7 +6,7 @@ const { Title, Text, Paragraph } = Typography;
 const MainRow = ({ userData }) => (
   <div style={{ background: "#455a64", padding: "30px" }}>
     <Row gutter={16}>
-      <Col span={8}>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginTop: 10 }}>
         <Card
           title="Total Repositories"
           bodyStyle={{ textAlign: "center" }}
@@ -16,7 +16,7 @@ const MainRow = ({ userData }) => (
           <Title>{userData.public_repos}</Title>
         </Card>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginTop: 10 }}>
         <Card
           title="Followers"
           bodyStyle={{ textAlign: "center" }}
@@ -26,7 +26,7 @@ const MainRow = ({ userData }) => (
           <Title>{userData.followers}</Title>
         </Card>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8} style={{ marginTop: 10 }}>
         <Card
           title="Following"
           bodyStyle={{ textAlign: "center" }}
