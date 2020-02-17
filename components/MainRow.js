@@ -1,7 +1,7 @@
 import { Card, Col, Row } from "antd";
 
 import { Typography } from "antd";
-const { Title, Text, Paragraph } = Typography;
+const { Title } = Typography;
 
 const MainRow = ({ userData }) => (
   <div style={{ background: "#455a64", padding: "30px" }}>
