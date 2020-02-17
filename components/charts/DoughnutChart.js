@@ -15,7 +15,6 @@ const DoughnutChart = ({ langData }) => {
 
   return (
     <div>
-      {console.log(langData)}
       <Doughnut data={data} />
     </div>
   );
