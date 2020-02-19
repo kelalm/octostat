@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
-import { Select, Radio } from "antd";
+import { Card, Col, Row, Radio, Typography } from "antd";
 
-const { Option } = Select;
-
-import { Card, Col, Row } from "antd";
-
-import { Typography } from "antd";
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 
 const gridStyle = {
   width: "100%",

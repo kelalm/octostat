@@ -1,13 +1,6 @@
-import { Input, Tooltip, Icon } from "antd";
-import { render } from "react-dom";
+import { Input, Tooltip, Icon, Button } from "antd";
 
 import Router from "next/router";
-
-import { Button } from "antd";
-
-const { Search } = Input;
-
-import Link from "next/link";
 
 export default class SearchBox extends React.Component {
   state = {
@@ -54,12 +47,6 @@ export default class SearchBox extends React.Component {
             Search
           </Button>
         </form>
-        {/* <Link href={"/user/" + this.state.enteredValue}> */}
-
-        {/* </Link> */}
-
-        <br />
-        <br />
       </div>
     );
   }

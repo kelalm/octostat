@@ -1,6 +1,5 @@
-import { Card, Col, Row } from "antd";
+import { Card, Col, Row, Typography } from "antd";
 
-import { Typography } from "antd";
 const { Title } = Typography;
 
 const MainRow = ({ userData }) => (
