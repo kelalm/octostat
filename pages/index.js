@@ -1,10 +1,5 @@
-import { Layout, Menu, Breadcrumb } from "antd";
-import { List, Avatar, Icon } from "antd";
-import { Row, Col } from "antd";
-const { Header, Content, Sider, Footer } = Layout;
-
-import { Typography } from "antd";
-
+import { Layout, Row, Col, Typography } from "antd";
+const { Content } = Layout;
 const { Title } = Typography;
 
 import SearchBox from "../components/SearchBox";
@@ -14,14 +9,9 @@ export default function Index() {
     <Layout>
       <Content
         style={{
-          //padding: 128,
           minHeight: "100vh",
-          // minHeight: 280,
           width: "100%",
           backgroundColor: "#263238"
-
-          // padding: "0 50px",
-          //marginTop: 128
         }}
       >
         <Row style={{ textAlign: "center", marginTop: "256px" }}>

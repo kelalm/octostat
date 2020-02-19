@@ -1,35 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-
-import PropTypes from "prop-types";
-
-import { Layout, Menu, Breadcrumb } from "antd";
-import { List, Avatar, Icon } from "antd";
-import { Row, Col } from "antd";
-const { Header, Content, Sider, Footer } = Layout;
-
-import { Typography } from "antd";
-const { Title, Text, Paragraph } = Typography;
-
 import fetch from "isomorphic-unfetch";
+import GhPolyglot from "gh-polyglot";
+import PropTypes from "prop-types";
 
 import MainRow from "../components/MainRow";
 import MainCharts from "../components/MainCharts";
 import TopRepos from "../components/TopRepos";
 
-import GhPolyglot from "gh-polyglot";
+import { Layout, Avatar, Icon, Row, Col, Typography } from "antd";
+const { Content } = Layout;
+const { Title, Paragraph } = Typography;
 
 const Stats = props => {
   const username = props.query.id;
-
-  console.log("tryies");
-  console.log(username);
 
   const [userData, setUserData] = useState("");
   const [langData, setLangData] = useState([]);
   const [repoData, setRepoData] = useState("");
   const [error, setError] = useState({ active: false, type: 200 });
-  const [rateLimit, setRateLimit] = useState(null);
 
   const getUserData = () => {
     fetch(`https://api.github.com/users/${username}`)
@@ -79,15 +67,6 @@ const Stats = props => {
   };
 
   useEffect(() => {
-    // fetch(`https://api.github.com/rate_limit`)
-    //   .then(response => response.json())
-    //   .then(json => {
-    //     setRateLimit(json.resources.core);
-    //     if (json.resources.core.remaining < 1) {
-    //       setError({ active: true, type: 403 });
-    //     }
-    //   });
-
     getUserData();
     getLangData();
     getRepoData();
@@ -103,9 +82,6 @@ const Stats = props => {
 
           paddingBottom: 256,
           margin: 0
-          // minHeight: 280,
-          // padding: "0 50px",
-          // marginTop: 24
         }}
       >
         <Row>
